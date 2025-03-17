@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <title>Eventlistener Example</title>
+        <style>
+            img{
+                transition:border 0.1s ease;
+            }
+            button{
+                transition:scale(1.2);
+            }
+        </style>
+    </head>
+    <body>
+        <button id = "clickButton">Click this button</button>
+        <img id = "exampleImage" src = "https://image3.mouthshut.com/images/imagesp/925717948s.jpg" alt = "Example Image" width = "200">
+        
+        <script>
+            const button = document.getElementById('clickButton');
+            const image = document.getElementById('exampleImage');
+
+            button.addEventListener('click', () => console.log("Button Clicked !"));
+            button.addEventListener('click', (event) => console.log(event));
+
+            image.addEventListener('mouseover', () => image.style.border = '30px solid green');
+            image.addEventListener('mouseout', () => image.style.border = '');
+
+            button.addEventListener('mouseover', () => button.style.scale=1.5);
+            button.addEventListener('mouseout', () => button.style.scale = 1);
+
+            document.addEventListener('keydown', (event) => console.log(`Key Pressed : ${event.key}`));
+        </script>
+    </body>
+</html>
